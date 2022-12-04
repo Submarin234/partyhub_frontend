@@ -1,5 +1,5 @@
 import { Request,Response,NextFunction } from "express";
-import axios, { AxiosResponse } from "axios";
+import axios,{AxiosResponse} from "axios";
 import { BASE_URL } from "./environment";
 
 interface Event {
