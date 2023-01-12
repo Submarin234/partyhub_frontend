@@ -5,10 +5,9 @@ import {FaCalendarAlt, FaMapMarkerAlt, FaTicketAlt} from "react-icons/fa";
 import LocationProps from "../props/LocationProps";
 import locations from "../locations";
 
-// TODO: remove this when we use the fake api
-function getLocation(id: number) {
+function getLocation(name: String) {
     return locations.find((element) => {
-        return element._id === id;
+        return element.name === name;
     })
 }
 

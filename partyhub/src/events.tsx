@@ -7,18 +7,18 @@ import img4 from "./images/img4.png"
 
 const events: EventProps[] = [
     {
-        _id: 0,
+        id: 0,
         name: "The Dark Show",
         description: "Vineri, Dj Dark va scoate partea întunecată din noi, la suprafață. Get ready, this guy is about to blow ya minds! 😍\n" +
             "El e gata să transforme trupurile în valuri de vibrații halucinante, voi veniți cu vibe-ul bun de acasă, dacă nu, vă ajutăm noi 🤪",
         image: img0,
-        location: 0,
+        location: "After Eight",
         ticketPrice: 20,
         shortDescription: "Se anunță un super party! Evenimentele organizate de After Eight sunt de neuitat!",
         date: "Vineri, 9 decembrie",
     },
     {
-        _id: 1,
+        id: 1,
         name: "World of NOA",
         description: "Are you ready to light another memorable night?\n" +
             "Let the warmth of our party take the chill from the air!\n" +
@@ -34,13 +34,13 @@ const events: EventProps[] = [
             "Access – ora 09:00 p.m.\n" +
             "NOA – The place with the perfect vibe for unforgettable moments together!",
         image: img1,
-        location: 1,
+        location: "NOA",
         ticketPrice: 30,
         shortDescription: "Se anunță un super party! Evenimentele organizate de Club NOA sunt de neuitat!",
         date: "Sâmbătă, 10 decembrie",
     },
     {
-        _id: 2,
+        id: 2,
         name: "HALL STARS",
         description: "See you on the dance floor la (H)ALL STARS NIGHT 😎!\n" +
             "Hai cu hainele alea cele mai flashy să ne aducem un pic aminte de vibe-ul de festival 🥳.\n" +
@@ -50,13 +50,13 @@ const events: EventProps[] = [
             "Pentru rezervări ne puteți contacta pe Facebook sau la numărul de telefon 0745 393 333.\n" +
             "Let’s rock this party!",
         image: img2,
-        location: 3,
+        location: "Euphoria",
         ticketPrice: 40,
         shortDescription: "Se anunță un super party! Evenimentele organizate de Euphoria Music Hall sunt de neuitat!",
         date: "Sâmbătă, 26 noiembrie",
     },
     {
-        _id: 3,
+        id: 3,
         name: "Retro Revolution 2000's",
         description: "Despre eveniment\n" +
             "Retro Revolution ▶Hituri vechi, pe beat-uri noi!📻 💯\n" +
@@ -66,13 +66,13 @@ const events: EventProps[] = [
             "Retro Revolution ▶Hituri vechi, pe beat-uri noi! 💯\n" +
             "Sunteți pregătiți de un super party? Vom dansa și vom cânta pe melodiile preferate, toată noaptea. 🤩 #WeAreREVOLUTIONary",
         image: img3,
-        location: 4,
+        location: "Revolution",
         ticketPrice: 50,
         shortDescription: "Se anunță un super party! Evenimentele organizate de Revolution Club Cluj-Napoca sunt de neuitat!",
         date: "Sâmbătă, 10 decembrie",
     },
     {
-        _id: 4,
+        id: 4,
         name: "Armonia – Disco&Retro",
         description: "If it’s FRIDAY – it’s a party!\n" +
             "If it’s NOA – it’s something special: Retro & Disco Party!\n" +
@@ -94,7 +94,7 @@ const events: EventProps[] = [
             "🕙 Access – ora 09:00 p.m.\n" +
             "Welcome to nonstop fun",
         image: img4,
-        location: 1,
+        location: "NOA",
         ticketPrice: 40,
         shortDescription: "Se anunță un super party! Evenimentele organizate de Club NOA sunt de neuitat!",
         date: "Vineri, 25 noiembrie"

@@ -1,12 +1,12 @@
 interface EventProps {
-    _id: number;
-    location: number;
+    id: number;
     name: string;
+    location: string;
+    date: string;
     shortDescription: string
     description: string;
     image: string;
     ticketPrice: number;
-    date: string;
 }
 
 export default EventProps

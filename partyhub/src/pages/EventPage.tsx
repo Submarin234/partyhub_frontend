@@ -11,7 +11,7 @@ import Events from "../components/Events";
 // TODO: remove this when we use the fake api
 function getEvent(id: number) {
     return events.find((element) => {
-        return element._id === id;
+        return element.id === id;
     })
 }
 
@@ -31,7 +31,7 @@ const EventPage: React.FC<EventRouterProps> = ({match }) => {
                     <Row>
                         <Col>
                             <EventDetailsComponent
-                                _id={event._id}
+                                id={event.id}
                                 name={event.name}
                                 description={event.description}
                                 image={event.image}
