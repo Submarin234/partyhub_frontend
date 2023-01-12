@@ -6,13 +6,16 @@ import Events from "../components/Events";
 
 function MainPage() {
     return (
-        <Container className='text-center py-3'>
+        <div className='text-center'>
             <Header/>
             <main>
-                <Events/>
+                <Container>
+                    <Events/>
+                </Container>
             </main>
             <Footer/>
-        </Container>
+        </div>
+
     );
 }
 
