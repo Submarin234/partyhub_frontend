@@ -1,9 +1,4 @@
 import EventProps from "./props/EventProps";
-import img0 from "./images/img0.png"
-import img1 from "./images/img1.png"
-import img2 from "./images/img2.png"
-import img3 from "./images/img3.png"
-import img4 from "./images/img4.png"
 
 const events: EventProps[] = [
     {
@@ -11,7 +6,7 @@ const events: EventProps[] = [
         name: "The Dark Show",
         description: "Vineri, Dj Dark va scoate partea întunecată din noi, la suprafață. Get ready, this guy is about to blow ya minds! 😍\n" +
             "El e gata să transforme trupurile în valuri de vibrații halucinante, voi veniți cu vibe-ul bun de acasă, dacă nu, vă ajutăm noi 🤪",
-        image: img0,
+        image: "images/img0.png",
         location: "After Eight",
         ticketPrice: 20,
         shortDescription: "Se anunță un super party! Evenimentele organizate de After Eight sunt de neuitat!",
@@ -33,7 +28,7 @@ const events: EventProps[] = [
             "Rezervarea se realizează printr-un mesaj privat sau prin telefon la 0736 934 985!\n" +
             "Access – ora 09:00 p.m.\n" +
             "NOA – The place with the perfect vibe for unforgettable moments together!",
-        image: img1,
+        image: "images/img1.png",
         location: "NOA",
         ticketPrice: 30,
         shortDescription: "Se anunță un super party! Evenimentele organizate de Club NOA sunt de neuitat!",
@@ -49,7 +44,7 @@ const events: EventProps[] = [
             "💳 Biletele se achiziționează doar de la intrare. Prețul este de 20 lei!\n" +
             "Pentru rezervări ne puteți contacta pe Facebook sau la numărul de telefon 0745 393 333.\n" +
             "Let’s rock this party!",
-        image: img2,
+        image: "images/img2.png",
         location: "Euphoria",
         ticketPrice: 40,
         shortDescription: "Se anunță un super party! Evenimentele organizate de Euphoria Music Hall sunt de neuitat!",
@@ -65,7 +60,7 @@ const events: EventProps[] = [
             "Petrecăreți din toate generațiile, vă așteptăm sâmbătă noaptea în Club ReVolution, să petrecem până în zori pe cele mai tari hituri românești și internaționale din toate timpurile! 🍾\n" +
             "Retro Revolution ▶Hituri vechi, pe beat-uri noi! 💯\n" +
             "Sunteți pregătiți de un super party? Vom dansa și vom cânta pe melodiile preferate, toată noaptea. 🤩 #WeAreREVOLUTIONary",
-        image: img3,
+        image: "images/img3.png",
         location: "Revolution",
         ticketPrice: 50,
         shortDescription: "Se anunță un super party! Evenimentele organizate de Revolution Club Cluj-Napoca sunt de neuitat!",
@@ -93,7 +88,7 @@ const events: EventProps[] = [
             "Rezervarea se realizează printr-un mesaj privat sau prin telefon la 0736 934 985!\n" +
             "🕙 Access – ora 09:00 p.m.\n" +
             "Welcome to nonstop fun",
-        image: img4,
+        image: "images/img4.png",
         location: "NOA",
         ticketPrice: 40,
         shortDescription: "Se anunță un super party! Evenimentele organizate de Club NOA sunt de neuitat!",

@@ -9,4 +9,4 @@ interface EventProps {
     ticketPrice: number;
 }
 
-export default EventProps
+export default EventProps;

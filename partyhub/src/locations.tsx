@@ -1,7 +1,6 @@
 import LocationProps from "./props/LocationProps";
 
 
-
 const locations: LocationProps[] = [
     {
         _id: 0,

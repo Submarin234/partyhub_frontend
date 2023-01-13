@@ -5,18 +5,20 @@ import {FaCalendarAlt, FaMapMarkerAlt, FaTicketAlt} from "react-icons/fa";
 import LocationProps from "../props/LocationProps";
 import locations from "../locations";
 
-function getLocation(name: String) {
+function getLocation(location: String) {
     return locations.find((element) => {
-        return element.name === name;
+        return element.name === location;
     })
 }
 
 const EventDetailsComponent: React.FC<EventProps> = (event) => {
+
     const location: LocationProps = getLocation(event.location)!
 
     return (
         <Card className='my-4 py-4 rounded'>
             <Card.Img src={event.image} alt={event.image} height={"400px"}/>
+
             <Card.Body>
                 <Card.Title>
                     <strong>{event.name}</strong>

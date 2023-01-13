@@ -5,10 +5,9 @@ import Footer from "../components/Footer";
 import EventDetailsComponent from "../base_components/EventDetailsComponent";
 import events from '../events'
 import EventProps from "../props/EventProps";
-import { RouteComponentProps } from 'react-router';
-import Events from "../components/Events";
+import {RouteComponentProps} from 'react-router';
 
-// TODO: remove this when we use the fake api
+
 function getEvent(id: number) {
     return events.find((element) => {
         return element.id === id;
@@ -17,12 +16,15 @@ function getEvent(id: number) {
 
 interface EventRouterProps extends RouteComponentProps<{
     id?: string;
-}> {}
+}> {
+}
 
-const EventPage: React.FC<EventRouterProps> = ({match }) => {
+const EventPage: React.FC<EventRouterProps> = ({match}) => {
     const routeId = match.params.id || '';
     const id = parseInt(routeId);
     const event: EventProps = getEvent(id)!
+    console.log("---------------------");
+    console.log(event.image);
     return (
         <div className='text-center'>
             <Header/>
