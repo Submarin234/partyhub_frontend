@@ -1,5 +1,5 @@
 interface LocationProps {
-    _id: number;
+    id: number;
     name: string;
     address: string;
 }

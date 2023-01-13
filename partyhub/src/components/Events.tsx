@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Col, Row} from "react-bootstrap";
 import EventProps from "../props/EventProps";
 import EventCardComponent from "../base_components/EventCardComponent";
-import {getEvents} from "../services/eventService";
+import {getEvents} from "../services/apiService";
 import {useEffect} from "react";
 
 const Events: React.FC = () => {

@@ -1,19 +1,31 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Card} from "react-bootstrap";
 import EventProps from "../props/EventProps";
 import {FaMapMarkerAlt, FaCalendarAlt} from "react-icons/fa";
-import locations from "../locations";
 import LocationProps from "../props/LocationProps";
-
-function getLocation(location: String) {
-    return locations.find((element) => {
-        return element.name === location;
-    })
-}
+import {getLocationByName} from "../services/apiService";
 
 const EventCardComponent: React.FC<EventProps> = (event) => {
 
-    const location: LocationProps = getLocation(event.location)!
+    const [location, setLocation] = useState<LocationProps | undefined>(undefined);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true);
+        getLocationByName(event.location).then(data => {
+            console.log(
+                "locationEvenCard ---" + data + "\n" +
+                data.name
+            );
+
+            setLocation(data);
+            setLoading(false);
+        })
+    }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <Card className='my-3 py-3 rounded'>

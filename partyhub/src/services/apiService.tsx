@@ -1,0 +1,42 @@
+import axios from 'axios';
+
+export const getEvents = (): Promise<any> => {
+    return axios.get('http://localhost:8081/event/api/events')
+        .then(res => res.data)
+        .catch(err => {
+            console.log(err);
+            return null;
+        });
+}
+
+
+export const getEventById = (id: number): Promise<any> => {
+
+    return axios.get('http://localhost:8081/event/api/events/', {
+        params: {
+            id: id
+        }
+    })
+        .then(res => {
+            console.log(res);
+            return res.data[0];
+        })
+        .catch(err => {
+            console.log(err);
+            return null;
+        });
+}
+
+
+export const getLocationByName = (name: String): Promise<any> => {
+
+    return axios.get('http://localhost:8081/location/api/locations/' + name)
+        .then(res => {
+            console.log(res);
+            return res.data;
+        })
+        .catch(err => {
+            console.log(err);
+            return null;
+        });
+}

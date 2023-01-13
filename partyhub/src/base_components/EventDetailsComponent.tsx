@@ -1,19 +1,31 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import EventProps from "../props/EventProps";
 import {Card} from "react-bootstrap";
 import {FaCalendarAlt, FaMapMarkerAlt, FaTicketAlt} from "react-icons/fa";
 import LocationProps from "../props/LocationProps";
-import locations from "../locations";
-
-function getLocation(location: String) {
-    return locations.find((element) => {
-        return element.name === location;
-    })
-}
+import {getLocationByName} from "../services/apiService";
 
 const EventDetailsComponent: React.FC<EventProps> = (event) => {
 
-    const location: LocationProps = getLocation(event.location)!
+    const [location, setLocation] = useState<LocationProps | undefined>(undefined);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true);
+        getLocationByName(event.location).then(data => {
+            console.log(
+                "locationEventDetails ---" + data + "\n" +
+                data.name
+            );
+
+            setLocation(data);
+            setLoading(false);
+        })
+    }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <Card className='my-4 py-4 rounded'>
@@ -21,7 +33,9 @@ const EventDetailsComponent: React.FC<EventProps> = (event) => {
 
             <Card.Body>
                 <Card.Title>
-                    <strong>{event.name}</strong>
+                    <strong>
+                        {event ? event.name : "No name found"}
+                    </strong>
                 </Card.Title>
             </Card.Body>
 
@@ -45,7 +59,11 @@ const EventDetailsComponent: React.FC<EventProps> = (event) => {
 
             <Card.Text>
                 <div className='my-3'>
-                    <p><FaMapMarkerAlt/>{location.name} , {location.address}</p>
+                    <p>
+                        <FaMapMarkerAlt/>
+                        {location ? location.name : "No location name found"} ,
+                        {location ? location.address : "No location address found"}
+                    </p>
                 </div>
             </Card.Text>
 
