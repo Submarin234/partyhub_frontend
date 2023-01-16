@@ -32,7 +32,7 @@ export const getLocationByName = (name: String): Promise<any> => {
 
     return axios.get('http://localhost:8081/location/api/locations/' + name)
         .then(res => {
-            console.log(res);
+            console.log("sunt in api service getLocation "+ res);
             return res.data;
         })
         .catch(err => {

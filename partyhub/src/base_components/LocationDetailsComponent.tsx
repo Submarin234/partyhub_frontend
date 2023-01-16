@@ -6,10 +6,6 @@ import LocationProps from "../props/LocationProps";
 import {getLocationByName} from "../services/apiService";
 
 const LocationDetailsComponent: React.FC<LocationProps> = (location) =>{
-    const [loading, setLoading] = useState(true);
-    if (loading) {
-        return <div>Loading...</div>;
-    }
     return (
         <Card className='my-4 py-4 rounded'>
 
