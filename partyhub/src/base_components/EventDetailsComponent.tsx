@@ -4,6 +4,7 @@ import {Card} from "react-bootstrap";
 import {FaCalendarAlt, FaMapMarkerAlt, FaTicketAlt} from "react-icons/fa";
 import LocationProps from "../props/LocationProps";
 import {getLocationByName} from "../services/apiService";
+import GoogleMapsLocation from "../utils/GoogleMapsLocation";
 
 const EventDetailsComponent: React.FC<EventProps> = (event) => {
 
@@ -28,16 +29,19 @@ const EventDetailsComponent: React.FC<EventProps> = (event) => {
     }
 
     return (
-        <Card className='my-4 py-4 rounded'>
-            <Card.Img src={event.image} alt={event.image} height={"400px"}/>
 
-            <Card.Body>
+        <Card className='my-4 py-4 rounded'>
+            <div className="imageCard">
+            <Card.Img className="resizeImage" src={event.image} alt={event.image} height={"400px"}/>
+            </div>
+            <br/>
+            <Card.Text>
                 <Card.Title>
                     <strong>
                         {event ? event.name : "No name found"}
                     </strong>
                 </Card.Title>
-            </Card.Body>
+            </Card.Text>
 
             <Card.Text>
                 <div className='my-3'>
@@ -72,7 +76,16 @@ const EventDetailsComponent: React.FC<EventProps> = (event) => {
                     {event.description}
                 </div>
             </Card.Text>
+            <Card.Text>
+                <div>
+                    {location ?
+                    <GoogleMapsLocation id={location.id} name={location.name} address={location.address} lat={location.lat} lon={location.lon}></GoogleMapsLocation>
+                        : "No location to display"
+                    }
+                </div>
+            </Card.Text>
         </Card>
+
     )
 }
 

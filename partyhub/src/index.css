@@ -55,3 +55,17 @@ footer{
 .card-link {
   color: white;
 }
+
+.map-container{
+  width:100%;
+  height: 100vh;
+}
+
+.imageCard{
+  text-align: center;
+}
+
+.resizeImage{
+  width:50%;
+  height:20%;
+}
