@@ -9,7 +9,6 @@ const EventCardComponent: React.FC<EventProps> = (event) => {
 
     const [location, setLocation] = useState<LocationProps | undefined>(undefined);
     const [loading, setLoading] = useState(true);
-
     useEffect(() => {
         setLoading(true);
         getLocationByName(event.location).then(data => {
@@ -27,6 +26,8 @@ const EventCardComponent: React.FC<EventProps> = (event) => {
         return <div>Loading...</div>;
     }
 
+    // @ts-ignore
+    // @ts-ignore
     return (
         <Card className='my-3 py-3 rounded'>
             <Card.Img src={event.image} alt={event.image} height={"150px"}/>
@@ -37,11 +38,14 @@ const EventCardComponent: React.FC<EventProps> = (event) => {
                 </Card.Title>
             </Card.Body>
 
-            <Card.Text>
-                <div className='my-3'>
-                    <p><FaMapMarkerAlt/> {location ? location.name : event.location} </p>
-                </div>
-            </Card.Text>
+            {/*<Card.Text>*/}
+            {/*    <div className='my-3'>*/}
+            {/*        <p><FaMapMarkerAlt/> {location ? location.name : event.location} </p>*/}
+            {/*    </div>*/}
+            {/*</Card.Text>*/}
+            <Card.Link href={"/location/" + location ? location?.name : undefined}><i><FaMapMarkerAlt/> {location ? location.name : event.location}</i>
+            </Card.Link>
+
 
             <Card.Text>
                 <div className='my-3'>
