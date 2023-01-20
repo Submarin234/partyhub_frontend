@@ -11,6 +11,7 @@ import {
 } from "../services/apiService";
 import {useEffect} from "react";
 import LocationProps from "../props/LocationProps";
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 const Events: React.FC = () => {
 
@@ -102,13 +103,16 @@ const Events: React.FC = () => {
                     }
                 </Col>
                 <Col>
-                    <button onClick={handleSortByName}>Sort by name</button>
+                    <br/>
+                    <button className="btn btn-dark" onClick={handleSortByName}>Sort by name</button>
                 </Col>
                 <Col>
-                    <button onClick={handleSortByDate}>Sort by date</button>
+                    <br/>
+                    <button className="btn btn-dark" onClick={handleSortByDate}>Sort by date</button>
                 </Col>
                 <Col>
-                    <button onClick={handleSortReset}>Reset sort</button>
+                    <br/>
+                    <button className="btn btn-dark"  onClick={handleSortReset} >Reset sort</button>
                 </Col>
             </Row>
             <Row>

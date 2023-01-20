@@ -7,7 +7,7 @@ import {Col, Container, Row} from "react-bootstrap";
 import EventDetailsComponent from "../base_components/EventDetailsComponent";
 import Footer from "../components/Footer";
 import LocationProps from "../props/LocationProps";
-import LocationDetailsComponent from "../base_components/LocationDetailsComponent";
+import LocationCardComponent from "../base_components/LocationCardComponent";
 
 interface LocationRouterProps extends RouteComponentProps<{
     name?: string;
@@ -49,7 +49,7 @@ const LocationPage: React.FC<LocationRouterProps> = ({match}) => {
                     <Row>
                         {location &&
                             <Col>
-                                <LocationDetailsComponent
+                                <LocationCardComponent
                                     id={location.id}
                                     name={location.name}
                                     address={location.address}

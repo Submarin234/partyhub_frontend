@@ -25,7 +25,7 @@ const LocationCardComponent: React.FC<LocationProps> = (location) => {
             <Card.Text>
                 <div>
                     {location ?
-                        <GoogleMapsLocation
+                        <GoogleMapsLocation 
                             id={location.id}
                             name={location.name}
                             address={location.address}
@@ -51,7 +51,7 @@ const LocationCardComponent: React.FC<LocationProps> = (location) => {
 
             <Card.Text>
                 <div className='my-3'>
-                    <p><FaMapMarkerAlt/> {location.description} </p>
+                    <p> {location.description} </p>
                 </div>
             </Card.Text>
 

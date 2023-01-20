@@ -20,7 +20,7 @@ const GoogleMapsLocation: React.FC<LocationProps> = (locationProps) => {
 const Map: React.FC<LocationProps> = (locationProps) => {
     const center = useMemo(() => ({lat: locationProps.lat, lng: locationProps.lon}), []);
     return (
-        <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
+        <GoogleMap zoom={15} center={center} mapContainerClassName="map-container">
             <MarkerF position={center}/>
         </GoogleMap>
     );
