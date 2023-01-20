@@ -7,6 +7,7 @@ import LocationPage from "./pages/LocationPage";
 import "./index.css"
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
+import LocationsPage from './pages/LocationsPage';
 
 const App: React.FC = () => (
     <Router>
@@ -16,6 +17,7 @@ const App: React.FC = () => (
             <Route path='/location/:name' exact={true} component={LocationPage}/>
             <Route path='/home' exact={true} component={HomePage}/>
             <Route path='/contact' exact={true} component={ContactPage}/>
+            <Route path='/locations' exact={true} component={LocationsPage}/>
         </Switch>
     </Router>
 );
