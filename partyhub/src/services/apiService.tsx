@@ -40,3 +40,12 @@ export const getLocationByName = (name: String): Promise<any> => {
             return null;
         });
 }
+
+export const getLocations = (): Promise<any> => {
+    return axios.get('http://localhost:8081/location/api/locations/')
+        .then(res => res.data)
+        .catch(err => {
+            console.log(err);
+            return null;
+        });
+}
