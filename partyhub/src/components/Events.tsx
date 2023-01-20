@@ -2,7 +2,13 @@ import React, {useState} from 'react'
 import {Col, Row} from "react-bootstrap";
 import EventProps from "../props/EventProps";
 import EventCardComponent from "../base_components/EventCardComponent";
-import {getEvents, getEventsByLocation, getLocations} from "../services/apiService";
+import {
+    getEvents,
+    getEventsByLocation,
+    getEventsSortByDate,
+    getEventsSortByName,
+    getLocations
+} from "../services/apiService";
 import {useEffect} from "react";
 import LocationProps from "../props/LocationProps";
 
@@ -16,6 +22,24 @@ const Events: React.FC = () => {
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedLocation(event.target.value);
+    };
+
+    const handleSortByName = () => {
+        getEventsSortByName().then(data => {
+            setEvents(data);
+        })
+    };
+
+    const handleSortByDate = () => {
+        getEventsSortByDate().then(data => {
+            setEvents(data);
+        })
+    };
+
+    const handleSortReset = () => {
+        getEvents().then(data => {
+            setEvents(data);
+        })
     };
 
     useEffect(() => {
@@ -62,19 +86,30 @@ const Events: React.FC = () => {
     return (
         <>
             <Row>
-                {
-                    locations &&
+                <Col>
+                    {
+                        locations &&
 
-                    <select value={selectedLocation} onChange={handleChange}>
-                        {locations.map((location: LocationProps) => (
-                            <option key={location.name} value={location.name}>
-                                {
-                                    location.name
-                                }
-                            </option>
-                        ))}
-                    </select>
-                }
+                        <select value={selectedLocation} onChange={handleChange}>
+                            {locations.map((location: LocationProps) => (
+                                <option key={location.name} value={location.name}>
+                                    {
+                                        location.name
+                                    }
+                                </option>
+                            ))}
+                        </select>
+                    }
+                </Col>
+                <Col>
+                    <button onClick={handleSortByName}>Sort by name</button>
+                </Col>
+                <Col>
+                    <button onClick={handleSortByDate}>Sort by date</button>
+                </Col>
+                <Col>
+                    <button onClick={handleSortReset}>Reset sort</button>
+                </Col>
             </Row>
             <Row>
                 {events.map((event: EventProps) => (
