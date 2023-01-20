@@ -8,6 +8,8 @@ import {getLocationByName} from "../services/apiService";
 const EventCardComponent: React.FC<EventProps> = (event) => {
 
     const [location, setLocation] = useState<LocationProps | undefined>(undefined);
+    // const locationName : String = location ? location?.name : undefined
+    const locationName : String = location?.name!
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         setLoading(true);
@@ -43,7 +45,7 @@ const EventCardComponent: React.FC<EventProps> = (event) => {
             {/*        <p><FaMapMarkerAlt/> {location ? location.name : event.location} </p>*/}
             {/*    </div>*/}
             {/*</Card.Text>*/}
-            <Card.Link href={"/location/" + location ? location?.name : undefined}><i><FaMapMarkerAlt/> {location ? location.name : event.location}</i>
+            <Card.Link href={"/location/" + locationName}><i><FaMapMarkerAlt/> {location ? location.name : event.location}</i>
             </Card.Link>
 
 
