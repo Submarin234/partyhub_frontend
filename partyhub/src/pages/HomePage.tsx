@@ -7,6 +7,7 @@ import {Carousel} from "react-bootstrap";
 
 function HomePage() {
     return (
+
         <div className='text-center'>
             <Header/>
 
@@ -106,6 +107,9 @@ function HomePage() {
                 </div>
 
             </div>
+            <br/>
+            <br/>
+            <br/>
             <br/>
             <br/>
             <Footer/>
