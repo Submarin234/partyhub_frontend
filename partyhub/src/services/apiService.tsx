@@ -19,7 +19,7 @@ export const getEventById = (id: number): Promise<any> => {
     })
         .then(res => {
             console.log(res);
-            return res.data[0];
+            return res.data[id];
         })
         .catch(err => {
             console.log(err);

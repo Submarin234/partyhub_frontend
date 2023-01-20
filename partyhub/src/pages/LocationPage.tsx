@@ -16,7 +16,7 @@ interface LocationRouterProps extends RouteComponentProps<{
 
 const LocationPage: React.FC<LocationRouterProps> = ({match}) => {
     const routeName = match.params.name || '';
-    console.log(routeName)
+
     const [location, setLocation] = useState<LocationProps | undefined>(undefined);
     const [loading, setLoading] = useState(true);
 
@@ -40,7 +40,7 @@ const LocationPage: React.FC<LocationRouterProps> = ({match}) => {
     if (location === undefined) {
         return <div>Loading...</div>;
     }
-    console.log("byxanu " + location)
+
     return (
         <div className='text-center'>
             <Header/>
@@ -54,7 +54,8 @@ const LocationPage: React.FC<LocationRouterProps> = ({match}) => {
                                     name={location.name}
                                     address={location.address}
                                     description={location.description}
-                                />
+                                    lat={location.lat}
+                                    lon={location.lon}/>
                             </Col>
                         }
                     </Row>

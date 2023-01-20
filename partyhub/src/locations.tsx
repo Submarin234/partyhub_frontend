@@ -6,7 +6,7 @@ const locations: LocationProps[] = [
         id: 0,
         name: "After Eight",
         address: "Strada Brassai Sámuel 12",
-        description: ""
+        description: "",
         lat: 0,
         lon: 0
     },
@@ -14,7 +14,7 @@ const locations: LocationProps[] = [
         id: 1,
         name: "NOA",
         address: "Str. Republicii 109 ",
-        description: ""
+        description: "",
         lat: 0,
         lon: 0
     },
@@ -22,7 +22,7 @@ const locations: LocationProps[] = [
         id: 2,
         name: "Form",
         address: "Aleea Stadionului 2",
-        description: ""
+        description: "",
         lat: 0,
         lon: 0
     },
@@ -30,7 +30,7 @@ const locations: LocationProps[] = [
         id: 3,
         name: "Euphoria",
         address: "Calea Mănăștur nr. 2-6",
-        description: ""
+        description: "",
         lat: 0,
         lon: 0
     },
@@ -38,7 +38,7 @@ const locations: LocationProps[] = [
         id: 4,
         name: "Revolution",
         address: "Str Memorandumului 13",
-        description: ""
+        description: "",
         lat: 0,
         lon: 0
 
