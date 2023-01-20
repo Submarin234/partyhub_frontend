@@ -10,7 +10,7 @@ function HomePage() {
         <div className='text-center'>
             <Header/>
 
-            <div className="homePage row-cols-2">
+            <div className="homePage row">
 
                 <div className="col">
 
@@ -56,15 +56,55 @@ function HomePage() {
                         />
                         <Carousel.Caption>
                             <h3>Stop waiting!</h3>
-                            <p>Start searching for a party to go with your friends and have a great night!</p>
+                            <p>Go and find a party now!</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
                 </div>
-
                 <div className="col">
 
+                    <Carousel className="carouselHome">
+                        <Carousel.Item>
+                            <img
+                                className="slideImage d-block w-100"
+                                src="http://localhost:3000/images/opinion1.png"
+                                alt="First slide"
+                            />
+
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="slideImage d-block w-100"
+                                src="http://localhost:3000/images/opinion2.png"
+                                alt="Second slide"
+                            />
+
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="slideImage d-block w-100"
+                                src="http://localhost:3000/images/opinion3.png"
+                                alt="Second slide"
+                            />
+
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="slideImage d-block w-100"
+                                src="http://localhost:3000/images/opinion4.png"
+                                alt="Second slide"
+                            />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="slideImage d-block w-100"
+                                src="http://localhost:3000/images/opinion5.png"
+                                alt="Second slide"
+                            />
+                        </Carousel.Item>
+                    </Carousel>
                 </div>
+
             </div>
             <br/>
             <br/>
