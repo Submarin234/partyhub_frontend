@@ -9,6 +9,7 @@ const Footer: React.FC = () => {
                     Copyright &copy; Submarin
                 </Col>
             </Row>
+
         </footer>
     )
 }

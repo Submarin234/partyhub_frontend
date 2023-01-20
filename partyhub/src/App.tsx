@@ -5,6 +5,8 @@ import MainPage from "./pages/MainPage";
 import EventPage from "./pages/EventPage";
 import LocationPage from "./pages/LocationPage";
 import "./index.css"
+import HomePage from "./pages/HomePage";
+import ContactPage from "./pages/ContactPage";
 
 const App: React.FC = () => (
     <Router>
@@ -12,6 +14,8 @@ const App: React.FC = () => (
             <Route path='/' exact={true} component={MainPage}/>
             <Route path='/event/:id' exact={true} component={EventPage}/>
             <Route path='/location/:name' exact={true} component={LocationPage}/>
+            <Route path='/home' exact={true} component={HomePage}/>
+            <Route path='/contact' exact={true} component={ContactPage}/>
         </Switch>
     </Router>
 );

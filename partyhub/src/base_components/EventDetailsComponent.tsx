@@ -4,14 +4,22 @@ import {Card} from "react-bootstrap";
 import {FaCalendarAlt, FaMapMarkerAlt, FaTicketAlt} from "react-icons/fa";
 import LocationProps from "../props/LocationProps";
 import {getLocationByName} from "../services/apiService";
+import GoogleMapsLocation from "../utils/GoogleMapsLocation";
+import Countdown from "react-countdown";
 
 const EventDetailsComponent: React.FC<EventProps> = (event) => {
 
     const [location, setLocation] = useState<LocationProps | undefined>(undefined);
     const [loading, setLoading] = useState(true);
 
+
     useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "http://maps.google.com/maps/api/js?sensor=false&v=3&libraries=geometry";
+        script.async = true;
+        document.body.appendChild(script);
         setLoading(true);
+
         getLocationByName(event.location).then(data => {
             console.log(
                 "locationEventDetails ---" + data + "\n" +
@@ -21,24 +29,31 @@ const EventDetailsComponent: React.FC<EventProps> = (event) => {
             setLocation(data);
             setLoading(false);
         })
+
+
     }, []);
 
     if (loading) {
         return <div>Loading...</div>;
     }
 
-    return (
-        <Card className='my-4 py-4 rounded'>
-            <Card.Img src={event.image} alt={event.image} height={"400px"}/>
+    const Completionist = () => <span>The event is happening now!</span>;
 
-            <Card.Body>
+    return (
+
+        <Card className='my-4 py-4 rounded'>
+            <div className="imageCard">
+            <Card.Img className="resizeImage" src={event.image} alt={event.image} height={"400px"}/>
+            </div>
+            <br/>
+            <Card.Text>
                 <Card.Title>
                     <strong>
                         {event ? event.name : "No name found"}
                     </strong>
                 </Card.Title>
-            </Card.Body>
 
+            </Card.Text>
             <Card.Text>
                 <div className='my-3'>
                     {event.shortDescription}
@@ -48,6 +63,10 @@ const EventDetailsComponent: React.FC<EventProps> = (event) => {
             <Card.Text>
                 <div className='my-3'>
                     <p><FaCalendarAlt/> {event.date}</p>
+                    Time left:
+                    <Countdown date={Date.parse(event.date) + 5000} className='countdown'>
+                        <Completionist />
+                    </Countdown>
                 </div>
             </Card.Text>
 
@@ -72,7 +91,16 @@ const EventDetailsComponent: React.FC<EventProps> = (event) => {
                     {event.description}
                 </div>
             </Card.Text>
+            <Card.Text>
+                <div>
+                    {location ?
+                    <GoogleMapsLocation id={location.id} name={location.name} address={location.address} lat={location.lat} lon={location.lon}></GoogleMapsLocation>
+                        : "No location to display"
+                    }
+                </div>
+            </Card.Text>
         </Card>
+
     )
 }
 
