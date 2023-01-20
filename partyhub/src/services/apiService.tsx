@@ -41,6 +41,19 @@ export const getLocationByName = (name: String): Promise<any> => {
         });
 }
 
+export const getEventsByLocation = (name: String): Promise<any> => {
+
+    return axios.get('http://localhost:8081/event/api/events/filter/' + name)
+        .then(res => {
+            console.log("sunt in api service getEventsByLocation "+ res);
+            return res.data;
+        })
+        .catch(err => {
+            console.log(err);
+            return null;
+        });
+}
+
 export const getLocations = (): Promise<any> => {
     return axios.get('http://localhost:8081/location/api/locations/')
         .then(res => res.data)
