@@ -54,7 +54,8 @@ const LocationPage: React.FC<LocationRouterProps> = ({match}) => {
                                     name={location.name}
                                     address={location.address}
                                     description={location.description}
-                                />
+                                    lat={location.lat}
+                                    lon={location.lon}/>
                             </Col>
                         }
                     </Row>

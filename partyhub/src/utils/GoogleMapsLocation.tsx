@@ -9,7 +9,7 @@ const GoogleMapsLocation: React.FC<LocationProps> = (locationProps) => {
     });
 
     if (!isLoaded) return <div>Loading...</div>;
-    return <Map id={locationProps.id} name={locationProps.name} address={locationProps.address} lat={locationProps.lat} lon={locationProps.lon}/>;
+    return <Map id={locationProps.id} name={locationProps.name} address={locationProps.address} lat={locationProps.lat} lon={locationProps.lon} description={locationProps.description}/>;
 }
 
 const Map: React.FC<LocationProps> = (locationProps) => {

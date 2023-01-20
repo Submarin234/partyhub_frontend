@@ -94,7 +94,7 @@ const EventDetailsComponent: React.FC<EventProps> = (event) => {
             <Card.Text>
                 <div>
                     {location ?
-                    <GoogleMapsLocation id={location.id} name={location.name} address={location.address} lat={location.lat} lon={location.lon}></GoogleMapsLocation>
+                    <GoogleMapsLocation id={location.id} name={location.name} address={location.address} lat={location.lat} lon={location.lon} description={location.description}></GoogleMapsLocation>
                         : "No location to display"
                     }
                 </div>
