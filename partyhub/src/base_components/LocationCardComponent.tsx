@@ -39,9 +39,13 @@ const LocationCardComponent: React.FC<LocationProps> = (location) => {
 
             <Card.Body>
                 <Card.Title>
-                    <strong>{location.name}</strong>
+
+                    <Card.Link href={"/location/" + location.name}><i>{location.name}</i>
+                    </Card.Link>
                 </Card.Title>
             </Card.Body>
+
+
 
             <Card.Text>
                 <div className='my-3'>

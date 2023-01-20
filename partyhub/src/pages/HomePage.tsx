@@ -62,6 +62,11 @@ function HomePage() {
                     </Carousel.Item>
                 </Carousel>
                 </div>
+
+
+            </div>
+
+            <div className="homePage row">
                 <div className="col">
 
                     <Carousel className="carouselHome">
@@ -73,14 +78,14 @@ function HomePage() {
                             />
 
                         </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                                className="slideImage d-block w-100"
-                                src="http://localhost:3000/images/opinion2.png"
-                                alt="Second slide"
-                            />
+                        {/*<Carousel.Item>*/}
+                        {/*    <img*/}
+                        {/*        className="slideImage d-block w-100"*/}
+                        {/*        src="http://localhost:3000/images/opinion2.png"*/}
+                        {/*        alt="Second slide"*/}
+                        {/*    />*/}
 
-                        </Carousel.Item>
+                        {/*</Carousel.Item>*/}
                         <Carousel.Item>
                             <img
                                 className="slideImage d-block w-100"
@@ -105,7 +110,6 @@ function HomePage() {
                         </Carousel.Item>
                     </Carousel>
                 </div>
-
             </div>
             <br/>
             <br/>

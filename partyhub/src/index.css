@@ -240,12 +240,17 @@ input[type=submit]:hover {
   background: #2466ff;
   border-radius: 5px;
 }
+
 .byx{
   color: white;
 }
+
 .titleWheel{
   font-size: 25px;
   color: white;
   padding-top: 5%;
 }
 
+.homePage {
+  padding: 30px 200px 360px;
+}
