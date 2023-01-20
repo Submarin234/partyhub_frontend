@@ -32,6 +32,7 @@ const Locations: React.FC = () => {
                             id={location.id}
                             name={location.name}
                             address={location.address}
+                            description = {location.description}
                             lat={location.lat}
                             lon={location.lon}
                         />
