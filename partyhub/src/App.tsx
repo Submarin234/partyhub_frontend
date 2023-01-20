@@ -8,6 +8,7 @@ import "./index.css"
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import LocationsPage from './pages/LocationsPage';
+import ChallengesPage from './pages/ChallengePage';
 
 const App: React.FC = () => (
     <Router>
@@ -18,6 +19,7 @@ const App: React.FC = () => (
             <Route path='/home' exact={true} component={HomePage}/>
             <Route path='/contact' exact={true} component={ContactPage}/>
             <Route path='/locations' exact={true} component={LocationsPage}/>
+            <Route path='/challenge' exact={true} component={ChallengesPage}/>
         </Switch>
     </Router>
 );
